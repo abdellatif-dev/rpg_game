@@ -16,7 +16,7 @@ onready var animation_tree = $AnimationTree
 onready var animation_state = animation_tree.get("parameters/playback")
 
 # warning-ignore:unused_argument
-func _physics_process(delta: float) -> void:
+func _process(delta: float) -> void:
 	match state:
 		move:
 			move_state(delta)
