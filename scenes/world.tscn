@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://scenes/bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Action RPG Resources/World/DirtTileset.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scenes/GrassBackground.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Action RPG Resources/World/CliffTileset.png" type="Texture" id=5]
 [ext_resource path="res://scenes/grass.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/bat.tscn" type="PackedScene" id=7]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -503,9 +504,6 @@ tile_data = PoolIntArray( -65533, 0, 3, 0, 0, 0, 1, 0, 1, 2, 0, 1, 3, 0, 131082,
 
 [node name="YSort" type="YSort" parent="."]
 
-[node name="player" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 123, 113 )
-
 [node name="bushes" type="YSort" parent="YSort"]
 
 [node name="bush" parent="YSort/bushes" instance=ExtResource( 1 )]
@@ -538,7 +536,22 @@ position = Vector2( 57, 121 )
 position = Vector2( 41, 121 )
 
 [node name="grass3" parent="YSort/grass" instance=ExtResource( 6 )]
-position = Vector2( 25, 121 )
+position = Vector2( 25, 137 )
+
+[node name="grass9" parent="YSort/grass" instance=ExtResource( 6 )]
+position = Vector2( 25, 153 )
+
+[node name="grass10" parent="YSort/grass" instance=ExtResource( 6 )]
+position = Vector2( 9, 153 )
+
+[node name="grass12" parent="YSort/grass" instance=ExtResource( 6 )]
+position = Vector2( 25, 169 )
+
+[node name="grass13" parent="YSort/grass" instance=ExtResource( 6 )]
+position = Vector2( 42, 169 )
+
+[node name="grass11" parent="YSort/grass" instance=ExtResource( 6 )]
+position = Vector2( 9, 137 )
 
 [node name="grass4" parent="YSort/grass" instance=ExtResource( 6 )]
 position = Vector2( 168, 54 )
@@ -554,3 +567,20 @@ position = Vector2( 286, 141 )
 
 [node name="grass8" parent="YSort/grass" instance=ExtResource( 6 )]
 position = Vector2( 302, 141 )
+
+[node name="enemy" type="YSort" parent="YSort"]
+
+[node name="player" parent="YSort/enemy" instance=ExtResource( 3 )]
+position = Vector2( 123, 113 )
+
+[node name="bat" parent="YSort/enemy" instance=ExtResource( 7 )]
+position = Vector2( 42, 100 )
+
+[node name="bat2" parent="YSort/enemy" instance=ExtResource( 7 )]
+position = Vector2( 200, 100 )
+
+[node name="bat3" parent="YSort/enemy" instance=ExtResource( 7 )]
+position = Vector2( 139, 157 )
+
+[node name="bat4" parent="YSort/enemy" instance=ExtResource( 7 )]
+position = Vector2( 217, 29 )

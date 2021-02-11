@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-const exelration = 100
-const speed = 200
-const friction = 100
+export var exelration = 100
+export var speed = 200
+export var friction = 100
 
 enum {
 	move,
@@ -15,6 +15,8 @@ var roll_vector = Vector2.DOWN
 
 onready var animation_tree = $AnimationTree
 onready var animation_state = animation_tree.get("parameters/playback")
+
+onready var sword = $Position2D/hitbox
 
 # warning-ignore:unused_argument
 func _process(delta: float) -> void:
@@ -45,6 +47,7 @@ func input_to_move(delta):
 func animations (_movement):
 	if _movement != Vector2.ZERO:
 		roll_vector = _movement
+		sword.knockback_vector = _movement
 		animation_tree.set("parameters/walk/blend_position", _movement)
 		animation_tree.set("parameters/idle/blend_position", _movement)
 		animation_tree.set("parameters/attack/blend_position", _movement)
@@ -72,12 +75,13 @@ func attack_state():
 
 func roll_state():
 	animation_state.travel("roll")
-	move()
+	_move()
 
-func move():
+func _move():
 	var velocity = Vector2.ZERO
 	var _input_vector = roll_vector * speed
 	var movement = check_for_movement(_input_vector, velocity)
+# warning-ignore:return_value_discarded
 	move_and_slide(movement)
 
 func state_finished():
