@@ -8,9 +8,86 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node",
+"class": "BBService",
+"language": "GDScript",
+"path": "res://bb_service.gd"
+}, {
+"base": "BTNode",
+"class": "BTAction",
+"language": "GDScript",
+"path": "res://bt_action.gd"
+}, {
+"base": "BTNode",
+"class": "BTAlways",
+"language": "GDScript",
+"path": "res://bt_always.gd"
+}, {
+"base": "BTNode",
+"class": "BTConditional",
+"language": "GDScript",
+"path": "res://bt_conditional.gd"
+}, {
+"base": "BTNode",
+"class": "BTGuard",
+"language": "GDScript",
+"path": "res://bt_guard.gd"
+}, {
+"base": "Node",
+"class": "BTNode",
+"language": "GDScript",
+"path": "res://bt_node.gd"
+}, {
+"base": "Reference",
+"class": "BTParallel",
+"language": "GDScript",
+"path": "res://bt_parallel.gd"
+}, {
+"base": "BTNode",
+"class": "BTRevert",
+"language": "GDScript",
+"path": "res://bt_revert.gd"
+}, {
+"base": "BTNode",
+"class": "BTSelector",
+"language": "GDScript",
+"path": "res://bt_selector.gd"
+}, {
+"base": "BTNode",
+"class": "BTSequence",
+"language": "GDScript",
+"path": "res://bt_sequence.gd"
+}, {
+"base": "BTNode",
+"class": "BTWait",
+"language": "GDScript",
+"path": "res://bt_wait.gd"
+}, {
+"base": "Node",
+"class": "BehaviourTree",
+"language": "GDScript",
+"path": "res://behaviour_tree.gd"
+}, {
+"base": "Node",
+"class": "Blackboard",
+"language": "GDScript",
+"path": "res://blackboard.gd"
+} ]
 _global_script_class_icons={
-
+"BBService": "res://icons/bbservice.svg",
+"BTAction": "res://icons/btaction.svg",
+"BTAlways": "",
+"BTConditional": "res://icons/btconditional.svg",
+"BTGuard": "res://icons/bt_guard.svg",
+"BTNode": "res://icons/btnode.svg",
+"BTParallel": "",
+"BTRevert": "res://icons/btrevert.svg",
+"BTSelector": "res://icons/btselector.svg",
+"BTSequence": "res://icons/btsequence.svg",
+"BTWait": "res://icons/btwait.svg",
+"BehaviourTree": "res://icons/bt.svg",
+"Blackboard": "res://icons/blackboard.svg"
 }
 
 [application]

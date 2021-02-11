@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Action RPG Resources/Shadows/SmallShadow.png" type="Texture" id=1]
 [ext_resource path="res://Action RPG Resources/Enemies/Bat.png" type="Texture" id=2]
 [ext_resource path="res://scenes/hurtbox.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/bat.gd" type="Script" id=4]
 [ext_resource path="res://scenes/stats.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/player_dection_zone.tscn" type="PackedScene" id=6]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -40,13 +41,17 @@ radius = 5.09902
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 8, 7 )
 
+[sub_resource type="CircleShape2D" id=9]
+radius = 41.0122
+
 [node name="bat" type="KinematicBody2D"]
 collision_layer = 16
 script = ExtResource( 4 )
+exelration = 40
+speed = 50
 
 [node name="Bat" type="AnimatedSprite" parent="."]
 frames = SubResource( 6 )
-frame = 4
 playing = true
 offset = Vector2( 0, -12 )
 
@@ -58,6 +63,7 @@ shape = SubResource( 7 )
 
 [node name="hurtbox" parent="." instance=ExtResource( 3 )]
 collision_layer = 8
+hit_bool = true
 
 [node name="CollisionShape2D" parent="hurtbox" index="0"]
 position = Vector2( 0, -16 )
@@ -65,7 +71,14 @@ shape = SubResource( 8 )
 
 [node name="stats" parent="." instance=ExtResource( 5 )]
 max_health = 4
+
+[node name="player_dection_zone" parent="." instance=ExtResource( 6 )]
+
+[node name="CollisionShape2D" parent="player_dection_zone" index="0"]
+shape = SubResource( 9 )
 [connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="no_health" from="stats" to="." method="_on_stats_no_health"]
 
 [editable path="hurtbox"]
+
+[editable path="player_dection_zone"]

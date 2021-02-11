@@ -597,6 +597,9 @@ radius = 7.0
 [node name="player" type="KinematicBody2D"]
 collision_layer = 2
 script = ExtResource( 2 )
+exelration = 50
+speed = 80
+friction = 30
 
 [node name="Player" type="Sprite" parent="."]
 position = Vector2( 1, -11 )
