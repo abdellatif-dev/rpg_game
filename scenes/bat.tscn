@@ -45,8 +45,9 @@ extents = Vector2( 8, 7 )
 [sub_resource type="CircleShape2D" id=9]
 radius = 42.0
 
-[sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 7, 6 )
+[sub_resource type="CapsuleShape2D" id=10]
+radius = 5.0
+height = 6.0
 
 [node name="bat" type="KinematicBody2D"]
 collision_layer = 16
@@ -75,7 +76,7 @@ position = Vector2( 0, -16 )
 shape = SubResource( 8 )
 
 [node name="stats" parent="." instance=ExtResource( 5 )]
-max_health = 4
+max_health = 2
 
 [node name="player_dection_zone" parent="." instance=ExtResource( 6 )]
 
@@ -85,9 +86,11 @@ shape = SubResource( 9 )
 
 [node name="hitbox" parent="." instance=ExtResource( 7 )]
 collision_mask = 4
+damage = 1
 
 [node name="CollisionShape2D" parent="hitbox" index="0"]
 position = Vector2( 0, -16 )
+rotation = 1.5708
 shape = SubResource( 10 )
 [connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="no_health" from="stats" to="." method="_on_stats_no_health"]
