@@ -4,10 +4,12 @@ var velocity = Vector2.ZERO
 var knockback = Vector2.ZERO
 
 onready var stat = $stats
+onready var sprite = $Bat
+
 onready var player_detection = $player_dection_zone
 
-export var exelration = 70
-export var speed = 100
+export var exelration = 90
+export var speed = 90
 export var friction = 50
 export(int) var knockbak_friction: int = 200
 
@@ -38,6 +40,8 @@ func _physics_process(delta: float) -> void:
 				velocity = velocity.move_toward(direction* speed, exelration * delta)
 			else:
 				state = idle
+
+			sprite.flip_h = velocity.x < 0
 
 	velocity = move_and_slide(velocity)
 

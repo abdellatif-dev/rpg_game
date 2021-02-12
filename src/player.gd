@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-export var exelration = 100
-export var speed = 200
-export var friction = 100
+export var exelration = 50
+export var speed = 80
+export var friction = 30
 
 enum {
 	move,
@@ -12,11 +12,14 @@ enum {
 
 var state = move
 var roll_vector = Vector2.DOWN
+var stats = PlayerStats
 
 onready var animation_tree = $AnimationTree
 onready var animation_state = animation_tree.get("parameters/playback")
-
 onready var sword = $Position2D/hitbox
+
+func _ready() -> void:
+	stats.connect("no_health", self, "queue_free")
 
 # warning-ignore:unused_argument
 func _process(delta: float) -> void:
@@ -86,4 +89,9 @@ func _move():
 
 func state_finished():
 	state= move
+
+
+
+func _on_hurtbox_area_entered(area: Area2D) -> void:
+	stats.health -= area.damage
 
