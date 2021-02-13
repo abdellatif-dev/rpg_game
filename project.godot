@@ -181,6 +181,7 @@ roll={
 2d_physics/layer_3="player_box"
 2d_physics/layer_4="enemies_box"
 2d_physics/layer_5="enemies"
+2d_physics/layer_6="soft_colisions"
 
 [rendering]
 

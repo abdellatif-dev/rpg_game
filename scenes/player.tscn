@@ -1,10 +1,11 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://Action RPG Resources/Player/Player.png" type="Texture" id=1]
 [ext_resource path="res://src/player.gd" type="Script" id=2]
 [ext_resource path="res://scenes/hitbox.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/sword.gd" type="Script" id=4]
 [ext_resource path="res://scenes/hurtbox.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Action RPG Resources/Shadows/MediumShadow.png" type="Texture" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "attack_down"
@@ -655,6 +656,9 @@ height = 10.0
 collision_layer = 2
 script = ExtResource( 2 )
 
+[node name="MediumShadow" type="Sprite" parent="."]
+texture = ExtResource( 6 )
+
 [node name="Player" type="Sprite" parent="."]
 position = Vector2( 1, -11 )
 texture = ExtResource( 1 )
@@ -705,7 +709,7 @@ collision_mask = 8
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" parent="Position2D/hitbox" index="0"]
-position = Vector2( -2, -6.55671e-07 )
+position = Vector2( -2, -5.43594e-05 )
 shape = SubResource( 46 )
 disabled = true
 

@@ -9,8 +9,6 @@
 [ext_resource path="res://scenes/bat.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/health_ui.tscn" type="PackedScene" id=8]
 
-
-
 [node name="Node2D" type="Node2D"]
 __meta__ = {
 "_edit_lock_": true
