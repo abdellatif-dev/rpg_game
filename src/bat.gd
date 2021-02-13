@@ -17,7 +17,6 @@ const Effect = preload("res://scenes/bat_effect.tscn")
 
 enum{
 	idle,
-	wander,
 	chase
 }
 
@@ -31,8 +30,6 @@ func _physics_process(delta: float) -> void:
 		idle:
 			velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
 			seek_player()
-		wander:
-			pass
 		chase:
 			var player = player_detection.player
 			if player != null:

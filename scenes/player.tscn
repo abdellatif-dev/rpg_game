@@ -720,6 +720,8 @@ hit_bool = true
 [node name="CollisionShape2D" parent="hurtbox" index="0"]
 position = Vector2( 0, -9 )
 shape = SubResource( 47 )
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
 [connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
 
 [editable path="Position2D/hitbox"]

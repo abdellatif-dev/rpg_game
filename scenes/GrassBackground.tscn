@@ -6,5 +6,5 @@
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
-region_rect = Rect2( -256, 0, 320, 180 )
+region_rect = Rect2( -552, -874, 2384, 1378 )
 region_filter_clip = true
